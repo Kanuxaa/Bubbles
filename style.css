@@ -11,19 +11,48 @@ body{
 }
 
 .bubble{
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    left: 100px;
     position: absolute;
     transform: translate(-50%, -100%);
-    background-image: linear-gradient(to top right, rgb(226, 226, 226),  rgb(207, 207, 207), rgb(99, 187, 177), rgb(214, 214, 214));
+    background-color:rgba(193, 193, 193, 0.737);
     border-radius: 50%;
     animation: disappear ease .8s;
+    transition: .1s;
+    overflow: hidden;
 }
+
+.bubble::after{
+    content: '';
+    position: absolute;
+    translate: 15% -15%;
+    width: 120px;
+    height: 50px;
+    rotate: 45deg;
+    background-image: linear-gradient(rgba(193, 193, 193, 0.737), rgb(99, 187, 177), rgba(193, 193, 193, 0.737));
+    animation: movement ease .5s;
+    transition: .1s;
+}
+
+
 
 @keyframes disappear {
     0%{
         opacity: 1
     }
     100%{
-        opacity: 0;
+        opacity: 1;
         transform: translate(-50%,-250%);
+    }
+}
+
+@keyframes movement {
+    0%{
+        translate: -50% 150%;
+    }
+    100%{
+        translate: 15% -15%;
     }
 }
