@@ -5,7 +5,7 @@ body.addEventListener('mousemove', (e)=>{
     bubble.classList.add('bubble')
     bubble.style.top = `${e.clientY}px`
     bubble.style.left = `${e.clientX}px`
-    bubble.style.width=bubble.style.height=`${Math.floor(Math.random() * 20) + 10}px`;
+    bubble.style.width=bubble.style.height=`${Math.floor(Math.random() * 10) + 20}px`;
     body.append(bubble)
     setTimeout(()=>{
         bubble.remove()
